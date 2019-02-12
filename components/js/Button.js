@@ -1,17 +1,24 @@
 var Button = function(options){
 	initializeOptions(options);
-	let element = document.getElementById(options.containerClass);
-	element.innerHTML = render();
+	renderButton();
 	registerEvents();
 }
 
+var template = function(){
+	return (
+		`<div class="btn-container">
+			<div class="btn-block" id="${this.element}">
+				<span class="btn-text">${this.buttonText}</span>
+			</div>
+		</div>`
+	);
+}
+
 var initializeOptions = function(options){
-	this.color = options.color;
 	this.element = options.id;
 	this.buttonText = options.buttonText;
 	this.containerClass = options.containerClass;
 	this.onButtonClick = options.onButtonClick;
-	this.bgColor = options.bgColor;
 }
 
 var registerEvents = function(){
@@ -20,18 +27,13 @@ var registerEvents = function(){
 	.addEventListener("click", this.onButtonClick);
 }
 
-var render = function(){
-	return (
-		`<div class="btn-container ${this.containerClass}">
-			<div class="btn-text" id="${this.element}">
-				${this.buttonText}
-			</div>
-		</div>`
-	);
+var renderButton = function(){
+	let element = document.getElementById(this.containerClass);
+	element.innerHTML = template();
 }
 
 var o = {};
-o.id = "btn-block";
+o.id = "btn-demo";
 o.containerClass = "button-container";
 o.buttonText = "Button";
 o.onButtonClick = function(){alert("Button Clicked")}
