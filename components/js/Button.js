@@ -28,6 +28,7 @@ var registerEvents = function(){
 }
 
 var renderButton = function(){
+	console.log(initializeOptions)
 	let element = document.getElementById(this.containerClass);
 	element.innerHTML = template();
 }
