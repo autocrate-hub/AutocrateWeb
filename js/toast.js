@@ -1,5 +1,6 @@
 let toastO=document.getElementById('toastO');
 let toastI=document.getElementById('toastI');
+let myToastFun={};
 let toastCreate=(val)=>{
     initToast(val);
     setTextToast(val.text);
@@ -22,17 +23,8 @@ let initToast=(val)=>{
     },timer);
     })
 }
-// let toastMessage=(message,backgroundColor)=>{
-//     if(backgroundColor){
-//         toastI.style.background=backgroundColor;
-//     }
-//     setTimeout(()=>{
-//         toastO.style.display='none';
-//         console.log('none');
-//     },5000)
-// }
 
-let myToastFun={};
+
 myToastFun.id='toast1';
 myToastFun.time=20;
 myToastFun.text='Toast No 1';
