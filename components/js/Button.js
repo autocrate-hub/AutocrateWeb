@@ -56,7 +56,6 @@ var renderButton = function(){
 	element.innerHTML = template();
 }
 
-
 var obj = {
 	id: "my-demo-btn",
 	containerId: "button-container",
@@ -64,4 +63,4 @@ var obj = {
 	onButtonClick: function(){ alert("my button was clicked"); }
 }
 
-new Button(obj);
+Button(obj);
