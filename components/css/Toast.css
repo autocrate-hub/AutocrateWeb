@@ -1,0 +1,14 @@
+#toast-block{
+    position: absolute;
+    top: 50%;
+    z-index: 10000;
+    width:100%; 
+    text-align: center;   
+}
+.toast-text{
+    display: inline-block;
+    padding: 10px;
+    background: grey;
+    color: white; 
+    border-radius: 20px;   
+}
