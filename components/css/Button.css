@@ -1,0 +1,21 @@
+* {
+	box-sizing: border-box;
+}
+.btn-container {
+	text-align: center;
+}
+.btn-block {
+	display: inline-block;
+    background: dimgrey;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+.btn-text {
+    color: aliceblue;
+}
+.btn-block:hover {
+	background: aliceblue;
+}
+.btn-block:hover .btn-text{
+	color: dimgrey;
+}
