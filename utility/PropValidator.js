@@ -1,10 +1,10 @@
 var validateProp = function(obj, property, type, isRequired){
 	if(isRequired){
 		if(obj && obj[property]){ 
-			if(typeof(obj[property]) == type) {
+			if(type.split(",").includes(typeof(obj[property]))) {
 				return true;
 			} else{
-				console.error("validateProp function expects the parameter '"+property+"' of type '"+type+"' but provided '"+typeof obj[property]+"'");
+				console.error("validateProp function expects the parameter '"+property+"' of type/s '"+type+"' but provided '"+typeof obj[property]+"'");
 				return false;
 			}
 		} else {
@@ -13,10 +13,10 @@ var validateProp = function(obj, property, type, isRequired){
 		}
 	} else {
 		if(obj && obj[property]) {
-			if(typeof(obj[property]) == type){
+			if(type.split(",").includes(typeof(obj[property]))){
 				return true;			
 			} else {
-				console.error("validateProp function expects the parameter '"+property+"' of type '"+type+"' but provided '"+typeof obj[property]+"'");
+				console.error("validateProp function expects the parameter '"+property+"' of type/s '"+type+"' but provided '"+typeof obj[property]+"'");
 				return false;
 			}
 		}
