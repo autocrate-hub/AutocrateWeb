@@ -59,7 +59,7 @@ var renderButton = function(){
 
 var obj = {
 	id: "my-demo-btn",
-	containerId: 12,
+	containerId: "button-container",
 	buttonText: "My Button",
 	onButtonClick: function(){ alert("my button was clicked"); }
 }
