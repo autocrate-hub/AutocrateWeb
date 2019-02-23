@@ -17,7 +17,7 @@ var template = function(){
 	);
 }
 var initializeOptions = function(options){
-	if(propsValidation(options)){
+	if(buttonPropsValidation(options)){
 		this.element = options.id;
 		this.buttonText = options.buttonText ? options.buttonText : this.buttonText;
 		this.containerId = options.containerId;
@@ -26,7 +26,7 @@ var initializeOptions = function(options){
 		alert("Please check the console for errors");
 	}
 }
-var propsValidation = function(options){
+var buttonPropsValidation = function(options){
 	var isValid = true;
 	if(!validateProp(options, "id", "string", true)) //true : required
 	{

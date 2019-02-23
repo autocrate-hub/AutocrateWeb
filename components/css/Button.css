@@ -14,8 +14,5 @@
     color: aliceblue;
 }
 .btn-block:hover {
-	background: aliceblue;
-}
-.btn-block:hover .btn-text{
-	color: dimgrey;
+	background: black;
 }
