@@ -38,7 +38,8 @@ let initToast = (options)=>{
     this.toastElementId = "toast-block";
     if(toastPropsValidation(options)){
         this.msg = options.msg;
-        this.delay = options.delay ? options.delay : 2000;      
+        this.delay = options.delay ? options.delay : 2000;
+        start();
     } else {
         alert("Please check the console for errors");
     }
@@ -46,7 +47,6 @@ let initToast = (options)=>{
 
 let Toast = (options) => {
     initToast(options);
-    start();
 }
 
 let myToastFun={};
