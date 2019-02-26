@@ -1,14 +1,14 @@
-let toastTemplate = () => {
-    let outerContainer = document.createElement('div');
+function toastTemplate(){
+    var outerContainer = document.createElement('div');
     outerContainer.setAttribute("id","toast-block");
-    let innerElement = document.createElement('div');
+    var innerElement = document.createElement('div');
     innerElement.className = "toast-text";
     innerElement.textContent = this.msg;
     outerContainer.appendChild(innerElement);
     return outerContainer;
 }
 
-let toastPropsValidation = (options)=> {
+function toastPropsValidation(options){
     if(!validateProp(options, "msg", "string,number", true)){
         return false;
     }
@@ -18,23 +18,23 @@ let toastPropsValidation = (options)=> {
     return true;
 }
 
-let showToast = () => {
+function showToast(){
     document.querySelector('body').appendChild(toastTemplate());
     document.getElementById(this.toastElementId).style.display = "block";
 }
 
-let hideToast = () => {
+function hideToast(){
     setTimeout( ()=>{
         document.getElementById(this.toastElementId).style.display = "none";
     }, this.delay);
 }
 
-let start = () => {
+function start(){
     showToast();
     hideToast(); 
 }
 
-let initToast = (options)=>{
+function initToast(options){
     this.toastElementId = "toast-block";
     if(toastPropsValidation(options)){
         this.msg = options.msg;
@@ -45,11 +45,21 @@ let initToast = (options)=>{
     }
 }
 
-let Toast = (options) => {
+function Toast(options){
     initToast(options);
 }
 
-let myToastFun={};
+
+var myToastFun={};
 myToastFun.delay=2000;
 myToastFun.msg='This toast will come handy to alert the user when something goes wrong';
-Toast(myToastFun);
+setTimeout(function(){
+	Toast(myToastFun);
+},5000)
+
+
+var myToastFunSecond ={};
+myToastFunSecond.delay=4000;
+setTimeout(function(){
+	Toast(myToastFunSecond);
+},7000)
